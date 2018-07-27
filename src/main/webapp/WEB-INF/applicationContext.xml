@@ -8,6 +8,6 @@
        http://www.springframework.org/schema/context/spring-context.xsd
        ">
     <!-- 本文件暂时无用 -->
-    <context:component-scan base-package="com.louis"/>
+    <!--<context:component-scan base-package="com.louis"/>-->
 
 </beans>

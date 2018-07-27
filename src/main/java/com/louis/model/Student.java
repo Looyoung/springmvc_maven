@@ -1,43 +1,48 @@
 package com.louis.model;
 
 public class Student {
-    private Integer studentid;
+    private Integer studentId;
 
-    private String studentname;
+    private String studentName;
 
-    private Integer studentage;
+    private Integer studentAge;
 
-    private String studentphone;
+    private String studentPhone;
 
-    public Integer getStudentid() {
-        return studentid;
+    public Integer getStudentId() {
+        return studentId;
     }
 
-    public void setStudentid(Integer studentid) {
-        this.studentid = studentid;
+    public void setStudentId(Integer studentId) {
+        this.studentId = studentId;
     }
 
-    public String getStudentname() {
-        return studentname;
+    public String getStudentName() {
+        return studentName;
     }
 
-    public void setStudentname(String studentname) {
-        this.studentname = studentname == null ? null : studentname.trim();
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 
-    public Integer getStudentage() {
-        return studentage;
+    public Integer getStudentAge() {
+        return studentAge;
     }
 
-    public void setStudentage(Integer studentage) {
-        this.studentage = studentage;
+    public void setStudentAge(Integer studentAge) {
+        this.studentAge = studentAge;
     }
 
-    public String getStudentphone() {
-        return studentphone;
+    public String getStudentPhone() {
+        return studentPhone;
     }
 
-    public void setStudentphone(String studentphone) {
-        this.studentphone = studentphone == null ? null : studentphone.trim();
+    public void setStudentPhone(String studentPhone) {
+        this.studentPhone = studentPhone;
+    }
+
+    @Override
+    public String toString() {
+        return "studentId:"+studentId+",studentName:"+studentName+",studentAge:"+studentAge+",studentPhone:"+studentPhone;
     }
 }

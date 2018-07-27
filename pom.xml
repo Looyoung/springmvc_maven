@@ -13,6 +13,8 @@
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
+
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
@@ -249,5 +251,23 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <!--<resources>-->
+      <!--<resource>-->
+        <!--<directory>src/main/java</directory>-->
+        <!--<includes>-->
+          <!--<include>**/*.properties</include>-->
+          <!--<include>**/*.xml</include>-->
+        <!--</includes>-->
+        <!--<filtering>false</filtering>-->
+      <!--</resource>-->
+      <!--<resource>-->
+        <!--<directory>src/main/resources</directory>-->
+        <!--<includes>-->
+          <!--<include>**/*.properties</include>-->
+          <!--<include>**/*.xml</include>-->
+        <!--</includes>-->
+        <!--<filtering>false</filtering>-->
+      <!--</resource>-->
+    <!--</resources>-->
   </build>
 </project>

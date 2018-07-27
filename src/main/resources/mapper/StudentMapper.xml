@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.louis.dao.StudentMapper">
+
+  <resultMap id="BaseResultMap" type="com.louis.model.Student">
+    <id column="studentId" jdbcType="INTEGER" property="studentId" />
+    <result column="studentName" jdbcType="VARCHAR" property="studentName" />
+    <result column="studentAge" jdbcType="INTEGER" property="studentAge" />
+    <result column="studentPhone" jdbcType="VARCHAR" property="studentPhone" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    studentId, studentName, studentAge, studentPhone
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from student
+    where studentId = #{studentId,jdbcType=INTEGER}
+  </select>
+
+</mapper>
