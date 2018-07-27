@@ -9,6 +9,16 @@ public class Student {
 
     private String studentPhone;
 
+    public Student(){
+
+    }
+
+    public Student(String studentName,int studentAge,String studentPhone){
+        this.studentName = studentName;
+        this.studentAge = studentAge;
+        this.studentPhone = studentPhone;
+    }
+
     public Integer getStudentId() {
         return studentId;
     }

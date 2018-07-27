@@ -3,22 +3,30 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <properties resource="jdbc.properties"/>
     <!-- 配置开发环境，可以配置多个，在具体用时再做切换 -->
     <environments default="test">
         <environment id="test">
-            <transactionManager type="JDBC"></transactionManager>    <!-- 事务管理类型：JDBC、MANAGED -->
-            <dataSource type="POOLED">    <!-- 数据源类型：POOLED、UNPOOLED、JNDI -->
-                <property name="driver" value="com.mysql.jdbc.Driver" />
-                <property name="url" value="jdbc:mysql://localhost:3306/school?characterEncoding=utf-8" />
-                <property name="username" value="root" />
-                <property name="password" value="1234" />
+            <!-- 事务管理类型：JDBC、MANAGED -->
+            <transactionManager type="JDBC"></transactionManager>
+            <!-- 数据源类型：POOLED、UNPOOLED、JNDI -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}" />
+                <property name="url" value="${jdbc.url}" />
+                <property name="username" value="${jdbc.username}" />
+                <property name="password" value="${jdbc.password}" />
+
+                <property name="poolMaximumIdleConnections" value="0"/>
+                <property name="poolMaximumActiveConnections" value="1000"/>
+                <property name="poolPingQuery" value="SELECT 1 FROM DUAL" />
+                <property name="poolPingEnabled" value="true" />
             </dataSource>
         </environment>
     </environments>
 
     <!-- 加载映射文件 mapper -->
     <mappers>
-        <!-- 路径用 斜线（/） 分割，而不是用 点(.) -->
+        <!-- 路径用 斜线（/） 分割，而不是用 点(.) idea 默认指向 resources 下的包-->
         <mapper resource="mapper/StudentMapper.xml"/>
     </mappers>
 </configuration>
