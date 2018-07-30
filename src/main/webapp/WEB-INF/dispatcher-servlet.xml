@@ -10,13 +10,12 @@
        http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-
     <!--此文件负责整个mvc中的配置-->
 
-    <!--启用spring的一些annotation -->
+    <!-- 激活那些已经在spring容器里注册过的bean -->
     <context:annotation-config/>
 
-    <!-- 自动扫描装配 -->
+    <!-- 自动扫描装配, 除了具有<context:annotation-config>的功能之外 , 还可以在指定package下扫描注册javabean -->
     <context:component-scan base-package="com.louis.controller"/>
 
     <!-- 配置注解驱动 可以将request参数与绑定到controller参数上 -->
@@ -28,7 +27,7 @@
 
     <!--静态资源映射-->
     <!--本项目把静态资源放在了webapp的statics目录下，资源映射如下-->
-    <mvc:resources mapping="/css/**" location="/statics/css/"/>
+    <mvc:resources mapping="/css_mapping/**" location="/statics/css/"/>
     <mvc:resources mapping="/js/**" location="/statics/js/"/>
     <mvc:resources mapping="/image/**" location="/statics/image/"/>
 

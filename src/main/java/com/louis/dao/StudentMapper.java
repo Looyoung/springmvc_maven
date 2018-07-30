@@ -12,7 +12,7 @@ public interface StudentMapper {
 
     @Insert("insert into student(studentName,studentAge,studentPhone)" +
             "values(#{studentName,jdbcType=VARCHAR},#{studentAge,jdbcType=INTEGER},#{studentPhone,jdbcType=VARCHAR})")
-    @Options(useGeneratedKeys = true, keyProperty = "studentId", keyColumn = "studentId")
+//    @Options(useGeneratedKeys = true, keyProperty = "studentId")
     int insert(Student student);
 
     int insertSelective(Student student);

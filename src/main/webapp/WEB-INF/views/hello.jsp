@@ -10,7 +10,8 @@
 <html>
 <head>
     <title>Index Page</title>
-    <link rel="stylesheet" type="text/css" href="/statics/css/test.css"/>
+    <%--<link rel="stylesheet" type="text/css" href="/statics/css/test.css"/>--%>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css_mapping/test.css"/>
 </head>
 <body>
     <p>Spring MVC based on XML config success!</p>

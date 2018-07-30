@@ -28,5 +28,6 @@
     <mappers>
         <!-- 路径用 斜线（/） 分割，而不是用 点(.) idea 默认指向 resources 下的包-->
         <mapper resource="mapper/StudentMapper.xml"/>
+        <!--<package name="com.louis.dao"/>-->
     </mappers>
 </configuration>
