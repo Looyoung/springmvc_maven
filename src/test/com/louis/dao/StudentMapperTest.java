@@ -18,7 +18,7 @@ public class StudentMapperTest {
     public void insert() {
         SqlSession sqlSession = SqlSessionUtil.getSqlSession();
 
-        Student student = new Student("Massey",32,"18813293326");
+        Student student = new Student("Jason",43,"18813291236");
         StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
         int i = studentMapper.insert(student);
         sqlSession.commit();  // 一定要提交,不然数据库查不到数据,但id有在自增,不知道为什么???  原因, 默认情况下,事务不是自动提交

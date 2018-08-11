@@ -1,15 +1,15 @@
-package dao;
+package com.louis.mybatis.dao;
 
-import model.Student;
+import com.louis.mybatis.model.Student;
 
 public interface StudentMapper {
-    int deleteByPrimaryKey(Integer studentid);
+    int deleteByPrimaryKey(Integer studentId);
 
     int insert(Student record);
 
     int insertSelective(Student record);
 
-    Student selectByPrimaryKey(Integer studentid);
+    Student selectByPrimaryKey(Integer studentId);
 
     int updateByPrimaryKeySelective(Student record);
 

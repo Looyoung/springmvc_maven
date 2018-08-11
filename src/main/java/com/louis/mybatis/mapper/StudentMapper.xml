@@ -1,82 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="dao.StudentMapper">
-  <resultMap id="BaseResultMap" type="model.Student">
-    <id column="studentId" jdbcType="INTEGER" property="studentid" />
-    <result column="studentName" jdbcType="VARCHAR" property="studentname" />
-    <result column="studentAge" jdbcType="INTEGER" property="studentage" />
-    <result column="studentPhone" jdbcType="VARCHAR" property="studentphone" />
+<mapper namespace="com.louis.mybatis.dao.StudentMapper">
+  <resultMap id="BaseResultMap" type="com.louis.mybatis.model.Student">
+    <id column="student_id" jdbcType="INTEGER" property="studentId" />
+    <result column="student_name" jdbcType="VARCHAR" property="studentName" />
+    <result column="student_age" jdbcType="INTEGER" property="studentAge" />
+    <result column="student_phone" jdbcType="VARCHAR" property="studentPhone" />
   </resultMap>
   <sql id="Base_Column_List">
-    studentId, studentName, studentAge, studentPhone
+    student_id, student_name, student_age, student_phone
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from student
-    where studentId = #{studentid,jdbcType=INTEGER}
+    where student_id = #{studentId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from student
-    where studentId = #{studentid,jdbcType=INTEGER}
+    where student_id = #{studentId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="model.Student">
-    insert into student (studentId, studentName, studentAge, 
-      studentPhone)
-    values (#{studentid,jdbcType=INTEGER}, #{studentname,jdbcType=VARCHAR}, #{studentage,jdbcType=INTEGER}, 
-      #{studentphone,jdbcType=VARCHAR})
+  <insert id="insert" parameterType="com.louis.mybatis.model.Student">
+    insert into student (student_id, student_name, student_age, 
+      student_phone)
+    values (#{studentId,jdbcType=INTEGER}, #{studentName,jdbcType=VARCHAR}, #{studentAge,jdbcType=INTEGER}, 
+      #{studentPhone,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="model.Student">
+  <insert id="insertSelective" parameterType="com.louis.mybatis.model.Student">
     insert into student
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="studentid != null">
-        studentId,
+      <if test="studentId != null">
+        student_id,
       </if>
-      <if test="studentname != null">
-        studentName,
+      <if test="studentName != null">
+        student_name,
       </if>
-      <if test="studentage != null">
-        studentAge,
+      <if test="studentAge != null">
+        student_age,
       </if>
-      <if test="studentphone != null">
-        studentPhone,
+      <if test="studentPhone != null">
+        student_phone,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="studentid != null">
-        #{studentid,jdbcType=INTEGER},
+      <if test="studentId != null">
+        #{studentId,jdbcType=INTEGER},
       </if>
-      <if test="studentname != null">
-        #{studentname,jdbcType=VARCHAR},
+      <if test="studentName != null">
+        #{studentName,jdbcType=VARCHAR},
       </if>
-      <if test="studentage != null">
-        #{studentage,jdbcType=INTEGER},
+      <if test="studentAge != null">
+        #{studentAge,jdbcType=INTEGER},
       </if>
-      <if test="studentphone != null">
-        #{studentphone,jdbcType=VARCHAR},
+      <if test="studentPhone != null">
+        #{studentPhone,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="model.Student">
+  <update id="updateByPrimaryKeySelective" parameterType="com.louis.mybatis.model.Student">
     update student
     <set>
-      <if test="studentname != null">
-        studentName = #{studentname,jdbcType=VARCHAR},
+      <if test="studentName != null">
+        student_name = #{studentName,jdbcType=VARCHAR},
       </if>
-      <if test="studentage != null">
-        studentAge = #{studentage,jdbcType=INTEGER},
+      <if test="studentAge != null">
+        student_age = #{studentAge,jdbcType=INTEGER},
       </if>
-      <if test="studentphone != null">
-        studentPhone = #{studentphone,jdbcType=VARCHAR},
+      <if test="studentPhone != null">
+        student_phone = #{studentPhone,jdbcType=VARCHAR},
       </if>
     </set>
-    where studentId = #{studentid,jdbcType=INTEGER}
+    where student_id = #{studentId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="model.Student">
+  <update id="updateByPrimaryKey" parameterType="com.louis.mybatis.model.Student">
     update student
-    set studentName = #{studentname,jdbcType=VARCHAR},
-      studentAge = #{studentage,jdbcType=INTEGER},
-      studentPhone = #{studentphone,jdbcType=VARCHAR}
-    where studentId = #{studentid,jdbcType=INTEGER}
+    set student_name = #{studentName,jdbcType=VARCHAR},
+      student_age = #{studentAge,jdbcType=INTEGER},
+      student_phone = #{studentPhone,jdbcType=VARCHAR}
+    where student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com/louis/mybatis/model.Student">
+    <id column="student_id" jdbcType="INTEGER" property="studentId" />
+    <result column="student_name" jdbcType="VARCHAR" property="studentName" />
+    <result column="student_age" jdbcType="INTEGER" property="studentAge" />
+    <result column="student_phone" jdbcType="VARCHAR" property="studentPhone" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    student_id, student_name, student_age, student_phone
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from student
+    where student_id = #{studentId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from student
+    where student_id = #{studentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com/louis/mybatis/model.Student">
+    insert into student (student_id, student_name, student_age, 
+      student_phone)
+    values (#{studentId,jdbcType=INTEGER}, #{studentName,jdbcType=VARCHAR}, #{studentAge,jdbcType=INTEGER}, 
+      #{studentPhone,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com/louis/mybatis/model.Student">
+    insert into student
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="studentId != null">
+        student_id,
+      </if>
+      <if test="studentName != null">
+        student_name,
+      </if>
+      <if test="studentAge != null">
+        student_age,
+      </if>
+      <if test="studentPhone != null">
+        student_phone,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="studentId != null">
+        #{studentId,jdbcType=INTEGER},
+      </if>
+      <if test="studentName != null">
+        #{studentName,jdbcType=VARCHAR},
+      </if>
+      <if test="studentAge != null">
+        #{studentAge,jdbcType=INTEGER},
+      </if>
+      <if test="studentPhone != null">
+        #{studentPhone,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com/louis/mybatis/model.Student">
+    update student
+    <set>
+      <if test="studentName != null">
+        student_name = #{studentName,jdbcType=VARCHAR},
+      </if>
+      <if test="studentAge != null">
+        student_age = #{studentAge,jdbcType=INTEGER},
+      </if>
+      <if test="studentPhone != null">
+        student_phone = #{studentPhone,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com/louis/mybatis/model.Student">
+    update student
+    set student_name = #{studentName,jdbcType=VARCHAR},
+      student_age = #{studentAge,jdbcType=INTEGER},
+      student_phone = #{studentPhone,jdbcType=VARCHAR}
+    where student_id = #{studentId,jdbcType=INTEGER}
   </update>
 </mapper>

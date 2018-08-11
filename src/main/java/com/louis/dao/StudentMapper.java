@@ -10,7 +10,7 @@ import java.util.List;
 public interface StudentMapper {
     int deleteByPrimaryKey(Integer studentId);
 
-    @Insert("insert into student(studentName,studentAge,studentPhone)" +
+    @Insert("insert into student(student_name,student_age,student_phone)" +
             "values(#{studentName,jdbcType=VARCHAR},#{studentAge,jdbcType=INTEGER},#{studentPhone,jdbcType=VARCHAR})")
 //    @Options(useGeneratedKeys = true, keyProperty = "studentId")
     int insert(Student student);
