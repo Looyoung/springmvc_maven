@@ -1,5 +1,8 @@
 package com.louis.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Student {
     private Integer studentId;
 

@@ -7,7 +7,11 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd
        ">
-    <!-- 本文件暂时无用 -->
-    <!--<context:component-scan base-package="com.louis"/>-->
+
+    <context:annotation-config></context:annotation-config>
+
+    <context:component-scan base-package="com.louis"/>
+
+    <import resource="spring-mybatis.xml"/>
 
 </beans>
